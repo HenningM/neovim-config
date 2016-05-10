@@ -13,6 +13,9 @@
     Plug 'honza/vim-snippets'
     Plug 'greg-js/vim-react-es6-snippets'
 
+    "Fuzzy file finder
+    Plug 'ctrlpvim/ctrlp.vim'
+
     "Additional syntax detection & highlighting
     Plug 'rust-lang/rust.vim'
 
