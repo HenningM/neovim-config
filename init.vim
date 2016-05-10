@@ -4,7 +4,7 @@
     "Git integration
     Plug 'tpope/vim-fugitive'
 
-    " Autocompletion
+    "Autocompletion
     function! DoRemote(arg)
         UpdateRemotePlugins
     endfunction
@@ -12,7 +12,12 @@
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'greg-js/vim-react-es6-snippets'
+
+    "Additional syntax detection & highlighting
+    Plug 'rust-lang/rust.vim'
+
     call plug#end()
+
 "}}}
 
 "Basic settings {{{
