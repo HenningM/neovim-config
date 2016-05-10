@@ -56,6 +56,9 @@
     inoremap <Right> <Esc>:tabnext<CR>a
     inoremap <Left> <Esc>:tabprevious<CR>a
 
+    "Make ctrl-l clear highlights
+    nnoremap <c-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
+
     let mapleader=","
 
     imap jj <Esc>
