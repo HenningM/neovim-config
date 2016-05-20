@@ -47,6 +47,9 @@
     filetype on
     filetype plugin indent on
 
+    "Disable mouse
+    set mouse=""
+
     "Use relative line numbers for all lines...
     set relativenumber
     "...except the current line
