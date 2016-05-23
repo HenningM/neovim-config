@@ -19,6 +19,9 @@
     "Additional syntax detection & highlighting
     Plug 'rust-lang/rust.vim'
 
+    "See editorconfig.org
+    Plug 'editorconfig/editorconfig-vim'
+
     call plug#end()
 
 "}}}
