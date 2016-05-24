@@ -22,6 +22,9 @@
     "See editorconfig.org
     Plug 'editorconfig/editorconfig-vim'
 
+    "Sneaky motions
+    Plug 'justinmk/vim-sneak'
+
     call plug#end()
 
 "}}}
