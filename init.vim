@@ -25,6 +25,9 @@
     "Sneaky motions
     Plug 'justinmk/vim-sneak'
 
+    "Better JS highlighting & indentation
+    Plug 'pangloss/vim-javascript'
+
     call plug#end()
 
 "}}}
