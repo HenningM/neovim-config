@@ -28,8 +28,16 @@
     "Better JS highlighting & indentation
     Plug 'pangloss/vim-javascript'
 
+    "JSX support
+    Plug 'mxw/vim-jsx'
+
     call plug#end()
 
+"}}}
+
+"Plugin settings {{{
+    "Enable vim-jsx also for .js files
+    let g:jsx_ext_required = 0
 "}}}
 
 "Basic settings {{{
