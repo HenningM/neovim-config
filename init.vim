@@ -31,6 +31,9 @@
     "JSX support
     Plug 'mxw/vim-jsx'
 
+    "Modify surrounding chars, such as parantheses & quotes
+    Plug 'tpope/vim-surround'
+
     call plug#end()
 
 "}}}
