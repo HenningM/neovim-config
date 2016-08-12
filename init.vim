@@ -31,6 +31,9 @@
     "JSX support
     Plug 'mxw/vim-jsx'
 
+    "Haxe support
+    Plug 'rf-/vaxe'
+
     "Modify surrounding chars, such as parantheses & quotes
     Plug 'tpope/vim-surround'
 
