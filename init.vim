@@ -31,6 +31,9 @@
     "JSX support
     Plug 'mxw/vim-jsx'
 
+    "CoffeeScript support
+    Plug 'kchmck/vim-coffee-script'
+
     "Haxe support
     Plug 'rf-/vaxe'
 
