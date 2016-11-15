@@ -37,6 +37,9 @@
     "Haxe support
     Plug 'rf-/vaxe'
 
+    "ActionScript support
+    Plug 'jeroenbourgois/vim-actionscript'
+
     "Modify surrounding chars, such as parantheses & quotes
     Plug 'tpope/vim-surround'
 
