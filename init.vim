@@ -76,6 +76,9 @@
     filetype on
     filetype plugin indent on
 
+    "Don't allow NVIM to set cursor shape
+    let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
+
     "Disable mouse
     set mouse=""
 
