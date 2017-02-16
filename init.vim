@@ -28,6 +28,18 @@
     "Better JS highlighting & indentation
     Plug 'pangloss/vim-javascript'
 
+    "TypeScript syntax highlighting
+    Plug 'leafgarland/typescript-vim'
+
+    "TypeScript completion support
+    Plug 'Quramy/tsuquyomi'
+
+    "Syntax checking
+    Plug 'vim-syntastic/syntastic'
+
+    "Async execution for vim (dependency of tsuquyomi)
+    Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+
     "JSX support
     Plug 'mxw/vim-jsx'
 
@@ -50,6 +62,19 @@
 "Plugin settings {{{
     "Enable vim-jsx also for .js files
     let g:jsx_ext_required = 0
+
+    "Syntastic settings {{{
+        set statusline+=%#warningmsg#
+        set statusline+=%{SyntasticStatuslineFlag()}
+        set statusline+=%*
+
+        let g:syntastic_always_populate_loc_list = 1
+        let g:syntastic_auto_loc_list = 1
+        let g:syntastic_check_on_open = 1
+        let g:syntastic_check_on_wq = 0
+        let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
+        let g:tsuquyomi_disable_quickfix = 1
+    "}}}
 "}}}
 
 "Basic settings {{{
