@@ -50,6 +50,9 @@
     "Haxe support
     Plug 'rf-/vaxe'
 
+    "Improved Markdown support
+    Plug 'plasticboy/vim-markdown'
+
     "ActionScript support
     Plug 'jeroenbourgois/vim-actionscript'
 
