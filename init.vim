@@ -14,7 +14,8 @@
     Plug 'greg-js/vim-react-es6-snippets'
 
     "Fuzzy file finder
-    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
 
     "Additional syntax detection & highlighting
     Plug 'rust-lang/rust.vim'
@@ -116,15 +117,15 @@
 "}}}
 
 "Key mappings {{{
-    nnoremap <Right> :tabnext<CR>
-    nnoremap <Left> :tabprevious<CR>
-    inoremap <Right> <Esc>:tabnext<CR>a
-    inoremap <Left> <Esc>:tabprevious<CR>a
+    let mapleader=","
+
+    nmap <Leader>p :Files<CR>
+    nmap <Leader>o :Buffers<CR>
+    nmap <Leader>l :Lines<CR>
 
     "Make ctrl-l clear highlights
     nnoremap <c-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
-    let mapleader=","
 
     imap jj <Esc>
 "}}}
