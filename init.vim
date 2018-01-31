@@ -36,7 +36,7 @@
     Plug 'Quramy/tsuquyomi'
 
     "Syntax checking
-    Plug 'vim-syntastic/syntastic'
+    Plug 'w0rp/ale'
 
     "Async execution for vim (dependency of tsuquyomi)
     Plug 'Shougo/vimproc.vim', { 'do': 'make' }
@@ -67,18 +67,6 @@
     "Enable vim-jsx also for .js files
     let g:jsx_ext_required = 0
 
-    "Syntastic settings {{{
-        set statusline+=%#warningmsg#
-        set statusline+=%{SyntasticStatuslineFlag()}
-        set statusline+=%*
-
-        let g:syntastic_always_populate_loc_list = 1
-        let g:syntastic_auto_loc_list = 1
-        let g:syntastic_check_on_open = 1
-        let g:syntastic_check_on_wq = 0
-        let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
-        let g:tsuquyomi_disable_quickfix = 1
-    "}}}
 "}}}
 
 "Basic settings {{{
