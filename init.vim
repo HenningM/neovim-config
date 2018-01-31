@@ -67,6 +67,8 @@
     "Enable vim-jsx also for .js files
     let g:jsx_ext_required = 0
 
+    "Disable folding for markdown files
+    let g:vim_markdown_folding_disabled = 1
 "}}}
 
 "Basic settings {{{
