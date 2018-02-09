@@ -97,6 +97,7 @@
 
     "Don't allow NVIM to set cursor shape
     let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
+    set guicursor=
 
     "Disable mouse
     set mouse=""
