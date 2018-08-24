@@ -13,6 +13,12 @@
     Plug 'honza/vim-snippets'
     Plug 'greg-js/vim-react-es6-snippets'
 
+    "Language protocol support
+    Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh'
+    \ }
+
     "Fuzzy file finder
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
@@ -69,6 +75,10 @@
 
     "Disable folding for markdown files
     let g:vim_markdown_folding_disabled = 1
+
+    let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['javascript-typescript-stdio']
+    \ }
 "}}}
 
 "Basic settings {{{
@@ -120,6 +130,9 @@
     "Make ctrl-l clear highlights
     nnoremap <c-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
+    nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+    nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+    nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
     imap jj <Esc>
 "}}}
