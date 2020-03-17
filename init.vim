@@ -8,10 +8,7 @@
     function! DoRemote(arg)
         UpdateRemotePlugins
     endfunction
-    Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-    Plug 'greg-js/vim-react-es6-snippets'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     "Language protocol support
     Plug 'autozimu/LanguageClient-neovim', {
@@ -79,6 +76,13 @@
     let g:LanguageClient_serverCommands = {
     \ 'javascript': ['javascript-typescript-stdio']
     \ }
+
+    "CoC extensions
+    let g:coc_global_extensions = [
+          \ 'coc-snippets',
+          \ 'coc-rls',
+          \ 'coc-pairs'
+          \ ]
 "}}}
 
 "Basic settings {{{
@@ -159,14 +163,4 @@
 
     "Disable background color erase
     set t_ut=
-"}}}
-
-"Deoplete {{{
-    let g:deoplete#enable_at_startup = 1
-"}}}
-
-"UltiSnips {{{
-    let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger="<c-b>"
-    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "}}}
