@@ -4,17 +4,18 @@
     "Git integration
     Plug 'tpope/vim-fugitive'
 
-    "Autocompletion
-    function! DoRemote(arg)
-        UpdateRemotePlugins
-    endfunction
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    "Language server protocol
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+    Plug 'nvim-lua/completion-nvim'
 
-    "Language protocol support
-    Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh'
-    \ }
+    "Telescope
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+
+    "Treesitter
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     "Fuzzy file finder
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -32,15 +33,6 @@
     "Better JS highlighting & indentation
     Plug 'pangloss/vim-javascript'
 
-    "TypeScript syntax highlighting
-    Plug 'leafgarland/typescript-vim'
-
-    "TypeScript completion support
-    Plug 'Quramy/tsuquyomi'
-
-    "Syntax checking
-    Plug 'w0rp/ale'
-
     "Async execution for vim (dependency of tsuquyomi)
     Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
@@ -49,15 +41,6 @@
 
     "CoffeeScript support
     Plug 'kchmck/vim-coffee-script'
-
-    "Haxe support
-    Plug 'rf-/vaxe'
-
-    "Improved Markdown support
-    Plug 'plasticboy/vim-markdown'
-
-    "ActionScript support
-    Plug 'jeroenbourgois/vim-actionscript'
 
     "Modify surrounding chars, such as parantheses & quotes
     Plug 'tpope/vim-surround'
@@ -73,16 +56,9 @@
     "Disable folding for markdown files
     let g:vim_markdown_folding_disabled = 1
 
-    let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['javascript-typescript-stdio']
-    \ }
-
-    "CoC extensions
-    let g:coc_global_extensions = [
-          \ 'coc-snippets',
-          \ 'coc-rls',
-          \ 'coc-pairs'
-          \ ]
+    "completion-nvim
+    autocmd BufEnter * lua require'completion'.on_attach()
+    set completeopt=menuone,noinsert,noselect
 "}}}
 
 "Basic settings {{{
@@ -134,11 +110,28 @@
     "Make ctrl-l clear highlights
     nnoremap <c-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
-    nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-    nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-    nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-
     imap jj <Esc>
+
+    "Use <Tab> and <S-Tab> to navigate through popup menu
+    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+    "Telescope
+    nnoremap <Leader>f <cmd>Telescope find_files<cr>
+    nnoremap <Leader>r <cmd>Telescope live_grep<cr>
+    nnoremap <Leader>\ <cmd>Telescope buffers<cr>
+    nnoremap <Leader>; <cmd>Telescope help_tags<cr>
+
+    "LSP {{{
+        "Hover doc
+        nnoremap <silent>K :Lspsaga hover_doc<CR>
+        "Signature help
+        inoremap <silent> <C-k> <Cmd>Lspsaga signature_help<CR>
+        "Code actions
+        nnoremap <silent><leader>ca :Lspsaga code_action<CR>
+        vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+    "}}}
+
 "}}}
 
 "Statusline {{{
