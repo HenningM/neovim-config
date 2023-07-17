@@ -45,6 +45,9 @@
     "Modify surrounding chars, such as parantheses & quotes
     Plug 'tpope/vim-surround'
 
+    "Sonokai color theme
+    Plug 'sainnhe/sonokai'
+
     call plug#end()
 
 "}}}
@@ -97,7 +100,7 @@
     "...except the current line
     set number
 
-    colorscheme molokai256
+    colorscheme sonokai
 "}}}
 
 "Key mappings {{{
