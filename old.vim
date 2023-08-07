@@ -6,8 +6,14 @@
 
     "Language server protocol
     Plug 'neovim/nvim-lspconfig'
-    Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
-    Plug 'nvim-lua/completion-nvim'
+    Plug 'nvimdev/lspsaga.nvim', { 'branch': 'main' }
+
+    "Code completion
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/nvim-cmp'
 
     "Telescope
     Plug 'nvim-lua/popup.nvim'
@@ -58,10 +64,6 @@
 
     "Disable folding for markdown files
     let g:vim_markdown_folding_disabled = 1
-
-    "completion-nvim
-    autocmd BufEnter * lua require'completion'.on_attach()
-    set completeopt=menuone,noinsert,noselect
 "}}}
 
 "Basic settings {{{
